@@ -1,0 +1,13 @@
+name: monografia
+dependencies:
+  - python=3.10
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - jupyter
+  - sphinx
+  - mlflow
+  - pip
+  - pip:
+      - notebook
+      - dvc
