@@ -1,8 +1,0 @@
-# requirements.txt
-pandas
-scikit-learn
-matplotlib
-jupyter
-sphinx
-mlflow
-dvc
