@@ -9,6 +9,8 @@ import seaborn as sns
 # Agregar el directorio raíz del proyecto al PYTHONPATH
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from data_preprocessing import num_index, detect_level_changes
+
 ####################################################################################################
 # Funciones de graficado
 ####################################################################################################
@@ -71,7 +73,7 @@ def graficar_medida2(medida,
                      titulo=None, 
                      etiqueta_x=None, 
                      etiqueta_y=None):
-    [inicio,fin]= indice_numero(labels, num)
+    [inicio,fin]= num_index(labels, num)
     num_puntos = fin - inicio
     ban_end = False
     ban_add_vertical_lines = False
@@ -102,7 +104,7 @@ def graficar_medida2(medida,
 
 
 
-    cambios_nivel = detectar_cambios_nivel(labels, num)
+    cambios_nivel = detect_level_changes(labels, num)
     # Añadir las bandas verticales sombreadas con los límites proporcionados
     for cambio_nivel in cambios_nivel:
       if(cambio_nivel[1] == 0):
@@ -128,3 +130,4 @@ def graficar_medida2(medida,
     plt.ylabel(etiqueta_y)
     plt.grid(True)  # Activa la cuadrícula
     plt.show()
+

@@ -5,9 +5,9 @@ Archivo de configuración del proyecto de Machine Learning.
 """
 
 import os
-
 # Obtener la ruta absoluta del directorio raíz del proyecto
-ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # --- Rutas de Directorios ---
 DATA_DIR = os.path.join(ROOT_DIR, 'data')
@@ -16,6 +16,7 @@ PROCESSED_DATA_DIR = os.path.join(DATA_DIR, 'processed')
 MODELS_DIR = os.path.join(ROOT_DIR, 'models')
 REPORTS_DIR = os.path.join(ROOT_DIR, 'reports')
 NOTEBOOKS_DIR = os.path.join(ROOT_DIR, 'notebooks')
+SRC_DIR = os.path.join(ROOT_DIR, 'src')
 
 # --- Rutas de Archivos (Ejemplos - Ajusta según tus necesidades) ---
 # RAW_DATA_FILE = os.path.join(RAW_DATA_DIR, 'tu_archivo_de_datos.csv')
@@ -42,3 +43,13 @@ TEST_SIZE = 0.2
 # --- Otros parámetros o configuraciones ---
 # LOGGING_LEVEL = 'INFO'
 # ... cualquier otra configuración global que necesites ...
+
+if __name__ == "__main__":
+    # Puedes agregar código de prueba aquí si es necesario
+    print("Configuraciones cargadas correctamente.")
+    print(f"Directorio raíz del proyecto: {ROOT_DIR}")
+    print(f"Directorio de datos crudos: {RAW_DATA_DIR}")
+    print(f"Directorio de datos procesados: {PROCESSED_DATA_DIR}")
+    print(f"Directorio de modelos: {MODELS_DIR}")
+    print(f"Directorio de informes: {REPORTS_DIR}")
+    print(f"Directorio de notebooks: {NOTEBOOKS_DIR}")

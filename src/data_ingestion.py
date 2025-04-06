@@ -6,9 +6,13 @@ import numpy as np
 import pandas as pd
 
 # Agregar el directorio raíz del proyecto al PYTHONPATH
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Agregar el directorio raíz del proyecto al PYTHONPATH
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if ROOT_DIR not in sys.path:
+    sys.path.append(ROOT_DIR)
 
-from config.config import RAW_DATA_DIR
+from globals import RAW_DATA_DIR
+print(RAW_DATA_DIR)
 
 FEATURES = ['emg', 'repetition', 'restimulus']
 
