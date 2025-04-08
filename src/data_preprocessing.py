@@ -85,23 +85,18 @@ def standardize_signal(signal):
     return (signal - np.mean(signal)) / np.std(signal)
 
 
-def calculate_rms(signal, window_size, step_size):
+def calculate_rms(signal):
     """
     Calcula la raíz cuadrática media (RMS) de una señal en ventanas.
 
     Parámetros:
         signal (array): Señal de entrada.
-        window_size (int): Tamaño de la ventana (en muestras).
-        step_size (int): Paso del desplazamiento (en muestras).
 
     Retorna:
         array: Señal de RMS.
     """
-    rms = []
-    for start in range(0, len(signal) - window_size + 1, step_size):
-        window = signal[start:start + window_size]
-        rms.append(np.sqrt(np.mean(window ** 2)))
-    return np.array(rms)
+    rms = np.sqrt(np.mean(signal**2))
+    return rms
 
 def remove_artifacts(signal, threshold=3):
     """
@@ -222,6 +217,31 @@ def segment_signal2(signal, window_size, overlap):
         start_indices.append(start)
 
     return segments, start_indices
+
+# Gracias a geminy por la idea de usar numpy
+# Hecho por ChatGPT = Skynet
+def segment_signal_as_matrix(signal, window_size, overlap):
+    """
+    Segmenta una señal en ventanas con solapamiento y devuelve una matriz de NumPy.
+
+    Parámetros:
+        signal (array): Señal de entrada (1D).
+        window_size (int): Tamaño de la ventana en muestras.
+        overlap (float): Porcentaje de solapamiento entre ventanas (entre 0 y 1).
+
+    Retorna:
+        numpy.ndarray: Matriz donde cada fila es una ventana segmentada.
+    """
+    step_size = int(window_size * (1 - overlap))
+    if step_size < 1:
+        raise ValueError("El solapamiento es demasiado alto. Reduce el valor de 'overlap'.")
+
+    num_segments = (len(signal) - window_size) // step_size + 1
+    matrix = np.zeros((num_segments, window_size))
+
+    for i, start in enumerate(range(0, len(signal) - window_size + 1, step_size)):
+        matrix[i, :] = signal[start:start + window_size]
+    return matrix
 
 
 def apply_segment_signal_to_dataframe(df, window_size, overlap):
