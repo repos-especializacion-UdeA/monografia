@@ -1,3 +1,24 @@
+# Ignorar archivos temporales de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignorar entornos virtuales
+venv/
+env/
+
+# Ignorar archivos de configuración local
+*.env
+
+# Ignorar resultados temporales
+*.zip
+*.mat
+*.csv
+
+# Ignorar notebooks temporales de Jupyter
+.ipynb_checkpoints/
+
 # Ignorar datos descargados de Ninapro
 tests/ninapro_DB1_raw/*
 tests/ninapro_DB1_raw_unzip/*
