@@ -17,6 +17,7 @@ MODELS_DIR = os.path.join(ROOT_DIR, 'models')
 REPORTS_DIR = os.path.join(ROOT_DIR, 'reports')
 NOTEBOOKS_DIR = os.path.join(ROOT_DIR, 'notebooks')
 SRC_DIR = os.path.join(ROOT_DIR, 'src')
+TEST_DIR = os.path.join(ROOT_DIR, 'tests')
 
 # --- Rutas de Archivos (Ejemplos - Ajusta según tus necesidades) ---
 # RAW_DATA_FILE = os.path.join(RAW_DATA_DIR, 'tu_archivo_de_datos.csv')
