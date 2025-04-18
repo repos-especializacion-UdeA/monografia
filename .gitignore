@@ -23,3 +23,5 @@ env/
 tests/ninapro_DB1_raw/*
 tests/ninapro_DB1_raw_unzip/*
 tests/ninapro_DB1_raw_csv/*
+data/raw/*
+data/processed/*
