@@ -12,6 +12,8 @@ ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 # --- Rutas de Directorios ---
 DATA_DIR = os.path.join(ROOT_DIR, 'data')
 RAW_DATA_DIR = os.path.join(DATA_DIR, 'raw')
+RAW_SUBSET_DATA_DIR = os.path.join(DATA_DIR, 'raw_subset')
+PREPROCESSED_SUBSET_DATA_DIR = os.path.join(DATA_DIR, 'preprocessed_subset')
 PROCESSED_DATA_DIR = os.path.join(DATA_DIR, 'processed')
 MODELS_DIR = os.path.join(ROOT_DIR, 'models')
 REPORTS_DIR = os.path.join(ROOT_DIR, 'reports')
