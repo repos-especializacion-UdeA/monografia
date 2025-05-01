@@ -27,3 +27,4 @@ data/raw/*
 data/processed/*
 data/raw_subset/*
 data/processed_subset/*
+data/preprocessed_subset/*
